@@ -75,6 +75,33 @@ async def discounts_btn(message: types.Message):
 """
     await message.answer(text, parse_mode="HTML")
 
+@dp.message(F.text == "🏢 Biz haqimizda")
+async def about_btn(message: types.Message):
+    text = f"""
+🏢 <b>Master`s Santexnika va Qurilish Mollari</b>
+
+10 yillik tajriba bilan xizmat ko'rsatamiz!
+
+📢 <b>Telegram:</b> {TELEGRAM_CHANNEL}
+📷 <b>Instagram:</b> {INSTAGRAM_LINK}
+
+🤝 <b>Biz ishonchli hamkormiz!</b>
+"""
+    await message.answer(text, parse_mode="HTML")
+
+@dp.message(F.text == "📞 Bog'lanish")
+async def contact_btn(message: types.Message):
+    text = """
+📞 <b>Bog'lanish</b>
+
+📍 Manzil: Shahar markazi
+📱 Telefon: +998 XX XXX XX XX
+🕒 Ish vaqti: 9:00 - 18:00
+
+🚗 Yetkazib berish mavjud!
+"""
+    await message.answer(text, parse_mode="HTML")
+
 @dp.message()
 async def echo_handler(message: types.Message):
     await message.answer(
